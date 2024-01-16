@@ -433,7 +433,7 @@ func imageForMemcached() (string, error) {
 // desirable state on the cluster
 func (r *MemcachedReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&cachev1alpha1.Memcached{}).
-		Owns(&appsv1.Deployment{}).
+		For(&cachev1alpha1.Memcached{}). //Create watches for the Memcached Kind
+		Owns(&appsv1.Deployment{}).      // Create watches for the Deployment which has its controller owned reference
 		Complete(r)
 }
