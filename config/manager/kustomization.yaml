@@ -5,4 +5,4 @@ kind: Kustomization
 images:
 - name: controller
   newName: r0b4dams/memcached-operator
-  newTag: 0.0.1
+  newTag: 0.0.2
